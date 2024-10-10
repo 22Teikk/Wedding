@@ -30,7 +30,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Engagement" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia+Sans+Condensed" rel="stylesheet">
-	
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+
 	<!-- clock   -->
 	<link rel="stylesheet" href="css/responsive-clock.css">
 	<!-- Animate.css -->
@@ -68,11 +71,11 @@
 			<div class="row">
 	
 				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						<li class="active"><a href="#fh5co-event">Events</a></li>
-						<li class="active"><a href="#fh5co-gallery">Gallery</a></li>
-						<li class="active"><a href="#fh5co-services">Highlights</a></li>
+					<ul class="menu_wedding">
+						<li class="active"><a href="index.html">Trang chính</a></li>
+						<li class="active"><a href="#fh5co-event">Sự kiện</a></li>
+						<li class="active"><a href="#fh5co-gallery">Ảnh cưới</a></li>
+						<li class="active"><a href="#fh5co-services">Khoảnh khắc</a></li>
 					</ul>
 				</div>
 			</div>
@@ -110,7 +113,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Events</h2>
+					<h2>Sự kiện</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -154,51 +157,47 @@
 		</div>
 	</div>
 
-
 	<div id="fh5co-gallery" class="fh5co-section-gray">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Gallery</h2>
+					<h2>Ảnh cưới</h2>
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
 				<div class="col-md-12">
-					<ul id="fh5co-gallery-list">
+					<ul id="fh5co-gallery-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
 						
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/RS1.jpg); "> 
-						<a href="images/RS1.jpg">
-							<div class="case-studies-summary">
-							</div>
-						</a>
-					</li>
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/RS2.jpg); "> 
-						<a href="images/RS2.jpg">
-							<div class="case-studies-summary">
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/RS3.jpg); "> 
-						<a href="images/RS3.jpg">
-							<div class="case-studies-summary">
-							</div>
-						</a>
-					</li>
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/RS3.jpg); "> 
-						<a href="images/RS3.jpg">
-							<div class="case-studies-summary">
-							</div>
-						</a>
-					</li>
-					
-					</ul>		
+						<li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url(images/RS1.jpg);"> 
+							<a href="images/RS1.jpg">
+								<div class="case-studies-summary"></div>
+							</a>
+						</li>
+	
+						<li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url(images/RS2.jpg);"> 
+							<a href="images/RS2.jpg">
+								<div class="case-studies-summary"></div>
+							</a>
+						</li>
+	
+						<li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url(images/RS3.jpg);"> 
+							<a href="images/RS3.jpg">
+								<div class="case-studies-summary"></div>
+							</a>
+						</li>
+	
+						<li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url(images/RS4.jpg);"> 
+							<a href="images/RS4.jpg">
+								<div class="case-studies-summary"></div>
+							</a>
+						</li>
+	
+					</ul>      
 				</div>
 			</div>
 		</div>
 	</div>
-
+	
 
 
 	<div id="fh5co-services" class="fh5co-section-gray">
@@ -206,7 +205,7 @@
 			
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Highlights</h2>
+					<h2>Khoảnh khắc đáng nhớ</h2>
 
 				</div>
 			</div>
@@ -254,6 +253,34 @@
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+	<script>
+	  $(document).ready(function() {
+	    var clock = $('.clock').FlipClock({
+	        clockFace: 'DailyCounter',
+	        autoStart: false,
+	        language: 'vi'
+	    });
+
+	    clock.setTime(220880);
+	    clock.setCountdown(true);
+	    clock.start();
+	  });
+
+	  // Định nghĩa ngôn ngữ tiếng Việt
+	  FlipClock.Lang.Vietnamese = {
+	    'years'   : 'Năm',
+	    'months'  : 'Tháng',
+	    'days'    : 'Ngày',
+	    'hours'   : 'Giờ',
+	    'minutes' : 'Phút',
+	    'seconds' : 'Giây'
+	  };
+
+	  // Gắn ngôn ngữ tiếng Việt vào danh sách ngôn ngữ của FlipClock
+	  FlipClock.Lang['vi'] = FlipClock.Lang.Vietnamese;
+	  FlipClock.Lang['vi-vn'] = FlipClock.Lang.Vietnamese;
+	</script>
 	<center>Sự có mặt của bạn là niềm vinh dự của chúng tôi ❤️ </a> </center>
 	</body>
 </html>

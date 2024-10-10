@@ -47,6 +47,10 @@ body {
   content: "";
 }
 
+.menu_wedding {
+  font-family: 'Lora', serif !important; /* Sử dụng font Lora */
+}
+
 a {
   color: #646464;
   -webkit-transition: 0.5s;
@@ -222,6 +226,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav ul li.active > a {
   color: #fff !important;
+  font-family: 'Lora', serif; /* Sử dụng font Lora */
 }
 
 #fh5co-counter,
@@ -370,6 +375,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-counter .fh5co-heading h2,
 #fh5co-event .fh5co-heading h2 {
+  
   color: #646464;
 }
 #fh5co-counter .fh5co-heading span,
