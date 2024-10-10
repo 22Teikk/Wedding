@@ -1,11 +1,17 @@
 $(document).ready(function() {
+  // Đặt ngôn ngữ Moment.js thành tiếng Việt
+  
   let clock;
 
   // Grab the current date
   let currentDate = new Date();
 
   // Target future date/24 hour time/Timezone
-  let targetDate = moment.tz("2024-11-02 12:00", "Asia/Ha Noi");
+  let targetDate = moment.tz("2024-11-02 12:00", "Asia/Ha_No");
+
+  // Lấy định dạng ngày tháng năm
+  let formattedDate = targetDate.format("dddd, ngày D tháng M năm YYYY");
+  $("#yourDateElement").text(formattedDate); // Thay #yourDateElement bằng ID hoặc selector của phần tử HTML bạn muốn hiển thị
 
   // Calculate the difference in seconds between the future and current date
   let diff = targetDate / 1000 - currentDate.getTime() / 1000;
@@ -17,7 +23,7 @@ $(document).ready(function() {
       countdown: true,
       autostart: false
     });
-    console.log("Date has already passed!")
+    console.log("Ngày đã qua!")
     
   } else {
     // Run countdown timer
@@ -26,7 +32,7 @@ $(document).ready(function() {
       countdown: true,
       callbacks: {
         stop: function() {
-          console.log("Timer has ended!")
+          console.log("Hết giờ!")
         }
       }
     });
@@ -46,4 +52,6 @@ $(document).ready(function() {
       }, 1000);
     }
   }
+
+ 
 });

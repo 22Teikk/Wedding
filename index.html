@@ -255,15 +255,25 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
 	<script>
 	  $(document).ready(function() {
-	    var clock = $('.clock').FlipClock({
-	        clockFace: 'DailyCounter',
-	        autoStart: false,
-	        language: 'vi'
-	    });
+	    var now = new Date();
 
-	    clock.setTime(220880);
-	    clock.setCountdown(true);
-	    clock.start();
+// Thiết lập thời gian đích là 12h ngày 2 tháng 11 năm 2024
+var targetDate = new Date(2024, 10, 2, 12, 0, 0); // Tháng 10 trong JavaScript là 0-indexed
+
+// Tính khoảng thời gian còn lại (tính bằng giây)
+var timeDiff = Math.floor((targetDate - now) / 1000);
+
+// Khởi tạo FlipClock
+var clock = $('.clock').FlipClock({
+    clockFace: 'DailyCounter',
+    autoStart: false,
+    language: 'vi'
+});
+
+// Thiết lập thời gian và bắt đầu đếm ngược
+clock.setTime(timeDiff);
+clock.setCountdown(true);
+clock.start();
 	  });
 
 	  // Định nghĩa ngôn ngữ tiếng Việt
@@ -295,7 +305,7 @@
 
         // Ẩn menu nếu trên thiết bị di động
         if ($(window).width() <= 768) {
-            $('.menu-1').hide(); // Ẩn menu trên thiết bị di động
+            $('#page').hide(); // Ẩn menu trên thiết bị di động
         }
     });
 });
