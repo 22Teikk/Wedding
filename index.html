@@ -71,10 +71,10 @@
 			<div class="row">
 				<div class="col-xs-10 text-right menu-1">
 					<ul class="menu_wedding">
-						<li class="active"><a href="index.html">Trang chính</a></li>
-						<li class="active"><a href="#fh5co-event">Sự kiện</a></li>
-						<li class="active"><a href="#fh5co-gallery">Ảnh cưới</a></li>
-						<li class="active"><a href="#fh5co-services">Khoảnh khắc</a></li>
+						<li class="active"><a href="index.html" class="scroll-link">Trang chính</a></li>
+						<li><a href="#fh5co-event" class="scroll-link">Sự kiện</a></li>
+						<li><a href="#fh5co-gallery" class="scroll-link">Ảnh cưới</a></li>
+						<li><a href="#fh5co-services" class="scroll-link">Khoảnh khắc</a></li>
 					</ul>
 				</div>
 			</div>
@@ -281,5 +281,25 @@
 	  FlipClock.Lang['vi-vn'] = FlipClock.Lang.Vietnamese;
 	</script>
 	<center>Sự có mặt của bạn là niềm vinh dự của chúng tôi ❤️ </a> </center>
+	<script>
+	$(document).ready(function() {
+    // Smooth scrolling
+    $('.scroll-link').on('click', function(e) {
+        e.preventDefault();  // Ngăn chặn hành vi mặc định của liên kết
+        var target = $(this).attr('href');  // Lấy giá trị href của liên kết
+
+        // Cuộn đến phần tử mục tiêu
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 1000);  // Thời gian cuộn là 1000 milliseconds (1 giây)
+
+        // Ẩn menu nếu trên thiết bị di động
+        if ($(window).width() <= 768) {
+            $('.menu-1').hide(); // Ẩn menu trên thiết bị di động
+        }
+    });
+});
+
+	</script>
 	</body>
 </html>
