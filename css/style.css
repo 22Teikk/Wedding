@@ -375,7 +375,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-counter .fh5co-heading h2,
 #fh5co-event .fh5co-heading h2 {
-  
+  font-family: "Dancing Script", cursive;
   color: #646464;
 }
 #fh5co-counter .fh5co-heading span,
@@ -1419,6 +1419,7 @@ form label {
 }
 #fh5co-offcanvas a {
   color: rgba(255, 255, 255, 0.5);
+  font-size: large;
 }
 #fh5co-offcanvas a:hover {
   color: rgba(255, 255, 255, 0.8);
@@ -1428,6 +1429,7 @@ form label {
   margin: 0;
 }
 #fh5co-offcanvas ul li {
+  line-height: 6rem;
   padding: 0;
   margin: 0;
   list-style: none;
