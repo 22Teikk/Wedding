@@ -1814,5 +1814,35 @@ form label {
   opacity: 0;
 }
 
+#fh5co-gallery-list .desc {
+    color: #fff; /* Màu chữ */
+    text-align: center; /* Căn giữa chữ */
+    background: rgba(0, 0, 0, 0.5); /* Nền mờ cho văn bản */
+    padding: 10px; /* Đệm xung quanh văn bản */
+    border-radius: 5px; /* Bo góc */
+}
+
+.event-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Khoảng cách giữa các mục */
+    flex-wrap: wrap; /* Đảm bảo khi thu nhỏ, các mục có thể xuống dòng */
+}
+
+.event-item {
+    flex: 1; /* Các mục sẽ tự động giãn rộng */
+    min-width: 300px; /* Đặt chiều rộng tối thiểu để không quá nhỏ */
+    max-width: 32%; /* Chiều rộng tối đa của một mục trên màn hình lớn */
+    box-sizing: border-box; /* Đảm bảo padding và border không ảnh hưởng đến kích thước */
+}
+
+@media (max-width: 768px) {
+    .event-item {
+        max-width: 90%; /* Trên màn hình nhỏ, mỗi mục chiếm 100% chiều rộng */
+            margin: 0 auto; /* Căn giữa item */
+
+      }
+}
+
 /*# sourceMappingURL=style.css.map */
 
