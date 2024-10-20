@@ -659,7 +659,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-gallery-list li {
   display: block;
-  padding: 0;
+  padding-top: 66.67%; /* Tỷ lệ 3:2, tức là chiều cao = 2/3 chiều rộng */
+ 
   margin: 0 0 10px 1%;
   list-style: none;
   min-height: 400px;
@@ -680,13 +681,15 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 #fh5co-gallery-list li a {
+  position: relative;
   min-height: 400px;
   padding: 2em;
   position: relative;
   width: 100%;
   display: block;
 }
-#fh5co-gallery-list li a:before {
+#fh5co-gallery-list li:before {
+  padding-top: 100%; /* Đặt tỷ lệ này để chiều cao bằng với chiều rộng, chiếm hết chiều cao */
   position: absolute;
   top: 0;
   left: 0;
