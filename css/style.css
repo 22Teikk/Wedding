@@ -2515,5 +2515,51 @@ form label {
   outline: none; /* Ẩn viền khi focus */
 }
 
+#send_gift {
+  margin: auto;
+  width: 150px; /* Chiều rộng của nút */
+  height: 150px; /* Chiều cao của nút */
+  border-radius: 20px; /* Bo góc cho nút */
+  background-color: #4CAF50; /* Màu nền nút */
+  display: flex;
+  justify-content: center; /* Căn giữa ảnh GIF theo chiều ngang */
+  align-items: center; /* Căn giữa ảnh GIF theo chiều dọc */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 1.5s infinite; /* Thêm animation liên tục */
+}
+
+/* Animation thu hút sự chú ý */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Ảnh GIF bên trong nút */
+#send_gift img {
+  width: 100px; /* Kích thước ảnh GIF */
+  height: 100px;
+  object-fit: cover;
+  border-radius: 15px; /* Bo góc cho ảnh GIF bên trong */
+}
+
+/* Hiệu ứng hover */
+#send_gift:hover {
+  transform: scale(1.2); /* Phóng to nút khi hover */
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
 /*# sourceMappingURL=style.css.map */
 
