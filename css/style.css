@@ -2426,6 +2426,94 @@ form label {
     height: 90%; /* Chiều cao video là 90% của modal-content */
 }
 
+.modal_gift {
+  display: none; /* Ẩn modal mặc định */
+  position: fixed; /* Giữ modal cố định trên màn hình */
+  z-index: 1; /* Đảm bảo modal nằm trên các phần tử khác */
+  left: 0;
+  top: 0;
+  width: 100%; /* Chiều rộng toàn màn hình */
+  height: 100%; /* Chiều cao toàn màn hình */
+  overflow: hidden; /* Vô hiệu hóa cuộn */
+  background-color: rgba(0, 0, 0, 0.4); /* Màu nền mờ với độ trong suốt */
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+}
+
+.modal-content_gift {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Chiều rộng của nội dung modal là 80% */
+  max-width: 600px; /* Chiều rộng tối đa của modal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng cho modal */
+  border-radius: 8px; /* Thêm bo góc cho modal */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.qr-container {
+  display: flex; /* Sử dụng flexbox để căn chỉnh các phần tử */
+  justify-content: space-around; /* Căn giữa các phần tử */
+  margin-top: 20px; /* Khoảng cách trên */
+}
+
+.qr-item {
+  display: flex; /* Sử dụng flexbox cho từng phần tử */
+  flex-direction: column; /* Sắp xếp theo chiều dọc */
+  align-items: center; /* Căn giữa các phần tử bên trong */
+}
+
+.qr-image_gift {
+  width: 20rem; /* Chiều rộng cố định */
+  height: 30rem; /* Chiều cao cố định */
+  border: 2px solid gray; /* Viền màu xám */
+  border-radius: 10px; /* Bo góc */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  margin-bottom: 10px; /* Khoảng cách dưới ảnh */
+}
+
+.styled-button {
+  margin: 5px; /* Khoảng cách giữa các nút */
+}
+
+.close_gift {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close_gift:hover,
+.close_gift:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.styled-button {
+  background-color: #646464; /* Màu nền */
+  color: white; /* Màu chữ */
+  border: none; /* Không có viền */
+  border-radius: 5px; /* Bo góc */
+  padding: 10px 20px; /* Khoảng cách bên trong */
+  text-align: center; /* Căn giữa chữ */
+  text-decoration: none; /* Không có gạch chân */
+  display: inline-block; /* Hiển thị inline-block */
+  font-size: 16px; /* Kích thước chữ */
+  margin: 5px; /* Khoảng cách giữa các nút */
+  cursor: pointer; /* Hiển thị con trỏ khi di chuột qua */
+  transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+.styled-button:hover {
+  background-color: #45a049; /* Màu nền khi hover */
+  transform: scale(1.05); /* Phóng to khi hover */
+}
+
+.styled-button:focus {
+  outline: none; /* Ẩn viền khi focus */
+}
 
 /*# sourceMappingURL=style.css.map */
 

@@ -88,7 +88,7 @@
 							<h1>Tường &amp; Hoài</h1>
 							<br>
 							<img src="images/fprint.png" alt="Shyam + Rincy"> 
-							<h2>T7 02.11.2023</h2>
+							<h2>T7 02.11.2024</h2>
 							<img src="https://w.ladicdn.com/s700x550/5c7362c6c417ab07e5196b05/t6urt6-20201125030742.png"/>
 							<!-- <h2>"Mình đã tìm thấy người mà trái tim hằng yêu thương." <br>Song of Solomon 3:4</h2> -->
 							<div class="flipTimebox">
@@ -254,7 +254,25 @@
 		</div>
 	</div>
 	
-
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img2.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<h1>Hộp Quà Cưới</h1>
+							<br>
+							<img id="send_gift" src="images/fprint.png" alt="Tường + Hoài"> 
+							<h2>T7 02.11.2024</h2>
+							<img src="https://w.ladicdn.com/s700x550/5c7362c6c417ab07e5196b05/t6urt6-20201125030742.png"/>
+							<!-- <h2>"Mình đã tìm thấy người mà trái tim hằng yêu thương." <br>Song of Solomon 3:4</h2> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 
 	<div id="fh5co-services" class="fh5co-section-gray">
 		<div class="container">
@@ -365,6 +383,33 @@ clock.start();
 });
 
 	</script>
+	<!-- Gift -->
+	<div id="giftModal" class="modal_gift">
+		<div class="modal-content_gift">
+			<span class="close_gift">&times;</span>
+			<br>
+			<h2>Hộp mừng cưới</h2>
+			<p>Cảm ơn tất cả các tình cảm mà các em, các bạn, các anh các chị đã dành cho Tường & Hoài</p>
+			<div class="qr-container">
+				<div class="qr-item">
+					<h3>Mừng cưới đến chú rể</h3>
+					<img src="images/qr_male.jpg" alt="QR Code Chú Rể" class="qr-image_gift">
+					<p>
+						<button class="styled-button">Tải mã QR</button>
+						<button class="styled-button">Copy STK</button>
+					</p>
+				</div>
+				<div class="qr-item">
+					<h3>Mừng cưới đến cô dâu</h3>
+					<img src="images/qr_female.jpg" alt="QR Code Cô Dâu" class="qr-image_gift">
+					<p>
+						<button class="styled-button">Tải mã QR</button>
+						<button class="styled-button">Copy STK</button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Video Modal -->
 	<div id="videoModal" class="modal">
 		<div class="modal-content">
@@ -386,8 +431,9 @@ clock.start();
     var videoPlayer = document.getElementById("videoPlayer");
 
     // Khi người dùng nhấp vào liên kết, mở modal và phát video
-    document.querySelector('.popup-vimeo').onclick = function() {
-        modal.style.display = "block";
+    document.querySelector('.popup-vimeo').onclick = function(event) {
+        event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+        modal.style.display = "flex"; // Hiển thị modal
         videoPlayer.load();  // Tải lại video để bắt đầu từ đầu
         videoPlayer.play();  // Tự động phát video
     }
@@ -403,6 +449,36 @@ clock.start();
         if (event.target == modal) {
             modal.style.display = "none";
             videoPlayer.pause();  // Dừng video khi đóng modal
+        }
+    }
+
+	window.onload = function(event) {
+		modal.style.display = "none";
+            videoPlayer.pause();
+            modal_gift.style.display = "none"; // Ẩn modal
+
+	}
+
+
+	var modal_gift = document.getElementById("giftModal");
+
+    // Lấy phần tử <span> để đóng modal
+    var span_close_gift = document.getElementsByClassName("close_gift")[0];
+
+    // Khi người dùng nhấp vào hình ảnh, mở modal
+    document.getElementById("send_gift").onclick = function() {
+        modal_gift.style.display = "flex"; // Hiển thị modal
+    }
+
+    // Khi người dùng nhấp vào <span> (x), đóng modal
+    span_close_gift.onclick = function() {
+        modal_gift.style.display = "none"; // Ẩn modal
+    }
+
+    // Khi người dùng nhấp vào bên ngoài modal, đóng nó
+    window.onclick = function(event) {
+        if (event.target == modal_gift) {
+            modal_gift.style.display = "none"; // Ẩn modal
         }
     }
 </script>
