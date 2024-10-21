@@ -6,6 +6,14 @@
   font-style: normal;
 }
 @font-face { font-family: Amsterdam; src: url('../fonts/AmsterdamOne.ttf'); } 
+@font-face {
+    font-family: Wallows;
+    src: url('../fonts/SVN-Wallows.otf');
+}
+@font-face {
+    font-family: Unthrift;
+    src: url('../fonts/SVN-Unthrift.ttf');
+}
 /* =======================================================
 *
 * 	Template Style 
@@ -48,7 +56,7 @@ body {
 }
 
 .menu_wedding {
-  font-family: 'Lora', serif !important; /* Sử dụng font Lora */
+  font-family: serif !important; /* Sử dụng font Lora */
 }
 
 a {
@@ -131,7 +139,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav ul li a {
   font-size: 20px;
-  font-family: Sofia Sans Condensed;
+  font-family: Unthrift Condensed;
   padding: 30px 10px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
@@ -226,7 +234,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav ul li.active > a {
   color: #fff !important;
-  font-family: 'Lora', serif; /* Sử dụng font Lora */
+  font-family: serif; /* Sử dụng font Lora */
 }
 
 #fh5co-counter,
@@ -282,11 +290,16 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-video .overlay {
   position: absolute;
   background-image: url('./img1.jpg');
+  background-size: contain; /* Đảm bảo hình ảnh phủ kín chiều ngang và giữ nguyên tỉ lệ */
+  background-position: center center; /* Căn giữa hình ảnh theo cả hai chiều */
+  background-repeat: no-repeat; /* Ngăn không cho hình ảnh lặp lại */
   padding-top: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
+  height: 100%;
   -webkit-transition: background-color 0.5s; /* Chỉ cần transition cho màu nền */
   -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
@@ -299,14 +312,14 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7); /* Màu mờ ban đầu */
+  background: rgba(0, 0, 0, 0.3); /* Màu mờ ban đầu */
   -webkit-transition: background-color 0.5s; /* Transition cho màu nền */
   -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
 }
 
 .fh5co-video:hover .overlay::after {
-  background: rgba(0, 0, 0, 0.9); /* Màu mờ khi hover */
+  background: rgba(0, 0, 0, 0.5); /* Màu mờ khi hover */
 }
 
 .fh5co-video:hover a {
@@ -391,7 +404,10 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-counter .fh5co-heading h2,
 #fh5co-event .fh5co-heading h2 {
-  font-family: "Dancing Script", cursive;
+      font-family: 'Wallows', sans-serif;
+      
+
+  /* font-family: "Dancing Script", cursive; */
   color: #646464;
 }
 #fh5co-counter .fh5co-heading span,
@@ -450,7 +466,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: Sofia Sans Condensed;
+  font-family: Unthrift Condensed;
   font-size: 25px;
 }
 #fh5co-counter .event-wrap p, #fh5co-counter .event-wrap span,
@@ -720,7 +736,7 @@ h1, h2, h3, h4, h5, h6, figure {
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   border-radius: 7px;
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
 }
 #fh5co-gallery-list li a:hover:before {
   background: rgba(0, 0, 0, 0.5);
@@ -875,7 +891,7 @@ form label {
   margin-bottom: 0px;
   font-size: 65px;
   line-height: 1.5;
-  font-family: "Amsterdam", Arial, serif;
+  font-family: "Wallows", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header .display-tc h1,
@@ -1003,6 +1019,7 @@ form label {
 }
 
 .fh5co-section-gray {
+  padding-top: 10rem;
   background: rgba(0, 0, 0, 0.04);
 }
 
@@ -1168,7 +1185,7 @@ form label {
   line-height: 1.5;
   font-weight: bold;
   color: #646464;
-  font-family: "Amsterdam", Arial, serif;
+  font-family: "Wallows", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {

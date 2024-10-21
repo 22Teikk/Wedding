@@ -1,0 +1,14 @@
+{
+    "redisXplorer.config": {
+        "profiles": [
+            {
+                "name": "HihoayRedis",
+                "host": "going.hihoay.io",
+                "accessKey": "feature",
+                "filter": "*",
+                "port": "6480"
+            }
+        ],
+        "scanLimit": 200
+    }
+}
