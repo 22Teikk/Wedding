@@ -281,18 +281,34 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-video .overlay {
   position: absolute;
+  background-image: url('./img1.jpg');
+  padding-top: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: background-color 0.5s; /* Chỉ cần transition cho màu nền */
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
-.fh5co-video:hover .overlay {
-  background: rgba(0, 0, 0, 0.7);
+
+.fh5co-video .overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Màu mờ ban đầu */
+  -webkit-transition: background-color 0.5s; /* Transition cho màu nền */
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
+
+.fh5co-video:hover .overlay::after {
+  background: rgba(0, 0, 0, 0.9); /* Màu mờ khi hover */
+}
+
 .fh5co-video:hover a {
   position: relative;
   -webkit-transform: scale(1.2);
@@ -953,6 +969,7 @@ form label {
   /* The countdown */
   margin-bottom: 2em;
   margin-top: 2em;
+
 
 
 }
