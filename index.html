@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!-- [if gt IE 8]><! <html class="no-js"> <![endif] -->
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +7,6 @@
 	<meta name="description" content="Chúng mình sắp về chung một nhà! Ngày tổ chức sẽ là 02 tháng 11 năm 2024, và chúng mình rất mong bạn sẽ cùng tham dự và chia sẻ niềm vui này." />
 	<meta name="author" content="Tường & Hoài" />
 
-  	<!-- Facebook and Twitter integration -->
 	<meta property="og:image" content="images/og.jpg"/>
 	<meta property="og:site_name" content="Tường ❤️ Hoài - 02.11.2024">
     <meta property="og:title" content="Tường ❤️ Hoài - 02.11.2024">
@@ -162,7 +157,7 @@
                         <div class="event-item text-center">
                             <div class="event-wrap animate-box">
                                 <h3>Tiệc cưới nhà trai</h3>
-                                <div class="event-trai>
+								<div class="event-col">
                                     <i class="icon-calendar"></i>
                                     <span>Ngày 02/11/2024</span>
                                 </div>
@@ -370,5 +365,46 @@ clock.start();
 });
 
 	</script>
+	<!-- Video Modal -->
+	<div id="videoModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<video id="videoPlayer" controls autoplay>
+				<source src="./video.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</div>
+	</div>
+	<script>
+    // Lấy phần tử modal
+    var modal = document.getElementById("videoModal");
+
+    // Lấy phần tử <span> để đóng modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Lấy video player
+    var videoPlayer = document.getElementById("videoPlayer");
+
+    // Khi người dùng nhấp vào liên kết, mở modal và phát video
+    document.querySelector('.popup-vimeo').onclick = function() {
+        modal.style.display = "block";
+        videoPlayer.load();  // Tải lại video để bắt đầu từ đầu
+        videoPlayer.play();  // Tự động phát video
+    }
+
+    // Khi người dùng nhấp vào <span> (x), đóng modal và dừng video
+    span.onclick = function() {
+        modal.style.display = "none";
+        videoPlayer.pause();  // Dừng video khi đóng modal
+    }
+
+    // Khi người dùng nhấp vào bên ngoài modal, đóng nó và dừng video
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            videoPlayer.pause();  // Dừng video khi đóng modal
+        }
+    }
+</script>
 	</body>
 </html>
