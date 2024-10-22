@@ -394,23 +394,23 @@ clock.start();
 		<div class="modal-content_gift">
 			<span class="close_gift">&times;</span>
 			<br>
-			<h2>Hộp mừng cưới</h2>
-			<p>Cảm ơn tất cả các tình cảm mà các em, các bạn, các anh các chị đã dành cho Tường & Hoài</p>
-			<div class="qr-container">
-				<div class="qr-item">
-					<h3>Mừng cưới đến chú rể</h3>
-					<img src="images/qr_male.jpg" alt="QR Code Chú Rể" class="qr-image_gift">
+			<h2 style="font-family: Unthrift Condensed;">Hộp mừng cưới</h2>
+			<p style="font-family: sans-serif; color: rgb(49, 47, 47);">Cảm ơn tất cả các tình cảm mà các em, các bạn, các anh các chị đã dành cho Tường & Hoài</p>
+			<div class="qr-container row">
+				<div class="qr-item col-12 col-md-6 text-center">
+					<h4 style="font-family: sans-serif; color: rgb(49, 47, 47);" >Mừng cưới đến chú rể</h4>
+					<img src="images/qr_male.jpg" alt="QR Code Chú Rể" class="qr-image_gift img-fluid">
 					<p>
-						<button class="styled-button">Tải mã QR</button>
-						<button class="styled-button">Copy STK</button>
+						<button class="styled-button" onclick="downloadImage('images/qr_male.jpg')">Tải mã QR</button>
+						<button class="styled-button" onclick="copySTK('155678988888')">Copy STK</button>
 					</p>
 				</div>
-				<div class="qr-item">
-					<h3>Mừng cưới đến cô dâu</h3>
-					<img src="images/qr_female.jpg" alt="QR Code Cô Dâu" class="qr-image_gift">
+				<div class="qr-item col-12 col-md-6 text-center">
+					<h4 style="font-family: sans-serif; color: rgb(49, 47, 47);">Mừng cưới đến cô dâu</h4>
+					<img src="images/qr_female.jpg" alt="QR Code Cô Dâu" class="qr-image_gift img-fluid">
 					<p>
-						<button class="styled-button">Tải mã QR</button>
-						<button class="styled-button">Copy STK</button>
+						<button class="styled-button" onclick="downloadImage('images/qr_female.jpg')">Tải mã QR</button>
+						<button class="styled-button" onclick="copySTK('9704229204382984590')">Copy STK</button>
 					</p>
 				</div>
 			</div>
@@ -498,6 +498,47 @@ clock.start();
 					<p>Hy vọng bạn sẽ có những kỷ niệm đẹp trong ngày trọng đại này!</p>
 				</div>
 			</div>
+		</div>
+	</div>
+	<script>
+    // Hàm tải xuống ảnh
+    function downloadImage(imageUrl) {
+        const link = document.createElement('a');
+        link.href = imageUrl;
+        link.download = imageUrl.split('/').pop(); // Lấy tên file từ URL
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    // Hàm sao chép STK
+    function copySTK(stk) {
+        navigator.clipboard.writeText(stk).then(() => {
+            showToast('Đã sao chép STK: ' + stk);
+        }).catch(err => {
+            console.error('Không thể sao chép STK: ', err);
+        });
+    }
+
+	function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message; // Cập nhật nội dung thông báo
+        toast.style.display = 'block'; // Hiển thị thông báo
+        toast.style.opacity = 1; // Đặt độ mờ thành 1
+
+        // Ẩn thông báo sau 3 giây
+        setTimeout(() => {
+            toast.style.opacity = 0; // Đặt độ mờ thành 0
+            setTimeout(() => {
+                toast.style.display = 'none'; // Ẩn thông báo
+            }, 500); // Thời gian ẩn
+        }, 3000); // Thời gian hiển thị
+    }
+</script>
+	<!-- Toast Notification -->
+	<div id="toast" class="toast" style="display: none;">
+		<div class="toast-content">
+			Đã sao chép STK!
 		</div>
 	</div>
 	</body>

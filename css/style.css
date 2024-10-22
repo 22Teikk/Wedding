@@ -2445,7 +2445,7 @@ form label {
   background-color: #fefefe;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Chiều rộng của nội dung modal là 80% */
+  width: 90%; /* Chiều rộng của nội dung modal là 80% */
   max-width: 600px; /* Chiều rộng tối đa của modal */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng cho modal */
   border-radius: 8px; /* Thêm bo góc cho modal */
@@ -2465,8 +2465,8 @@ form label {
 }
 
 .qr-image_gift {
-  width: 20rem; /* Chiều rộng cố định */
-  height: 30rem; /* Chiều cao cố định */
+  max-width: 100%; /* Đảm bảo ảnh không vượt quá chiều rộng của phần tử chứa */
+  height: auto; /* Giữ tỉ lệ của ảnh */
   border: 2px solid gray; /* Viền màu xám */
   border-radius: 10px; /* Bo góc */
   object-fit: cover; /* Đảm bảo ảnh không bị méo */
@@ -2507,7 +2507,7 @@ form label {
 }
 
 .styled-button:hover {
-  background-color: #45a049; /* Màu nền khi hover */
+  background-color: #E57373; /* Màu nền khi hover */
   transform: scale(1.05); /* Phóng to khi hover */
 }
 
@@ -2520,7 +2520,7 @@ form label {
   width: 150px; /* Chiều rộng của nút */
   height: 150px; /* Chiều cao của nút */
   border-radius: 20px; /* Bo góc cho nút */
-  background-color: #4CAF50; /* Màu nền nút */
+  background-color: #E57373; /* Màu nền nút (có thể thay đổi) */
   display: flex;
   justify-content: center; /* Căn giữa ảnh GIF theo chiều ngang */
   align-items: center; /* Căn giữa ảnh GIF theo chiều dọc */
@@ -2530,6 +2530,13 @@ form label {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: pulse 1.5s infinite; /* Thêm animation liên tục */
+}
+
+/* Thay đổi màu nền khi hover */
+#send_gift:hover {
+  background-color: #E57373; /* Màu nền khi hover */
+  transform: scale(1.1); /* Phóng to nút khi hover */
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Animation thu hút sự chú ý */
@@ -2560,6 +2567,22 @@ form label {
 #send_gift:hover {
   transform: scale(1.2); /* Phóng to nút khi hover */
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
+
+.toast-content {
+  font-family: sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
 
