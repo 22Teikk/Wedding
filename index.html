@@ -509,6 +509,8 @@ clock.start();
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+		modal.style.display = "none";
+		videoPlayer.pause();
     }
 
     // Hàm sao chép STK
